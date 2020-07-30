@@ -1,0 +1,40 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.chronoCircle {
+    font-size: 2em;
+}
+
+.startChronoBtn {
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    background-color: rgb(160, 6, 65);
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
+    line-height: 75px;
+}
+
+.stopChronoBtn {
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    background-color: rgb(160, 6, 65);
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
+    line-height: 75px;
+}
+
+.resetChronoBtn {
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    background-color: rgb(160, 6, 65);
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
+    line-height: 75px;
+}
