@@ -1,8 +1,11 @@
 class Chrono {
 
-    constructor(startYear, msInterval) {
+    constructor(startYear, endYear, msInterval) {
         this.start = startYear
+        this.reset = startYear
+        this.end = endYear
         this.interval = msInterval
+
     }
 
 
@@ -10,45 +13,52 @@ class Chrono {
         //Initialise le compteur a 0000
         const chronos = document.getElementsByClassName('chrono')
         for (const chrono of chronos) {
-        chrono.innerHTML = "0000" + " Y "
+            chrono.innerHTML = "0000" + " Y "
         }
 
         //interval de 100ms Incrementation +1
         const startBtn = document.getElementById('startChronoBtn')
         startBtn.addEventListener('click', () =>
-            setInterval(() => {   
-                if(this.start < 2000) {
+            this.addYear = setInterval(() => {
+                if (this.start < this.end) {
                     this.start++
-                    console.log(this.start)
+                        console.log(this.start)
                     const test = document.getElementById('test')
                     test.innerHTML = this.start + " Y"
-                }
-                else{
+                } else {
                     clearInterval();
                 }
             }, msInterval)
         );
     }
 
-    pauseTimer(){
+    pauseTimer() {
         console.log('pause')
-        let stopBtn = document.getElementById('stopChronoBtn')
-            stopBtn.addEventListener('click', () =>
-            console.log("test click"),
-                clearInterval()
-            )
-        
+        const stopBtn = document.getElementById('stopChronoBtn')
+        stopBtn.addEventListener('click', () =>
+            clearInterval(this.addYear)
+        )
+
     }
 
-   resetTimer() {
-        const resetBtn = document.getElementsByClassName('resetChronoBtn')
-            for (const reset of resetBtn) {
-                reset.addEventListener('click', (event) =>
-                console.log('reset'),
-                //window.location.reload()
-                )
+    resetTimer() {
+        const resetBtn = document.getElementById('resetChronoBtn')
+
+        resetBtn.addEventListener('click', () => {
+                //console.log("test click reset")
+                console.log(this.reset)
+                this.start = this.reset
+                const chronos = document.getElementsByClassName('chrono')
+                for (const chrono of chronos) {
+                    chrono.innerHTML = "0000" + " Y "
+                }
             }
-        }
+            //console.log("test click reset")
+            //window.location.reload()
+
+        )
+
+    }
 
 
 

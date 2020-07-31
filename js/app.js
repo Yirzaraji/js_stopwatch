@@ -57,10 +57,13 @@ reset()
 //Partie chrono objet
 
 
-const timer = new Chrono(start = 1900, msInterval = 100);
+const timer = new Chrono(start = 1900, endYear = 2000, msInterval = 100);
 timer.startTimer();
-//timer.pauseTimer()
+timer.pauseTimer()
 timer.resetTimer()
+
+
+
 //console.log(timer.start)
 /* for(const test of tests){
     
